@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SetThePath"
+    android:background="@color/colorLightGray3">
+
+    <!--<fragment-->
+    <!--android:id="@+id/map"-->
+    <!--class="com.google.android.gms.maps.SupportMapFragment"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentTop="true"/>-->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorDarkBlue"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/MenuStyle">
+
+
+        <!--<TextView-->
+        <!--android:id="@+id/setthepath_txtSetThePath"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:layout_marginEnd="116dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:text="SET THE PATH"-->
+        <!--android:textColor="@color/colorWhite"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textStyle="bold"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/toolbar"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/toolbar"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintVertical_bias="0.0" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/setthepath_btnHome"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginStart="8dp"-->
+        <!--android:layout_marginEnd="8dp"-->
+        <!--android:layout_marginBottom="8dp"-->
+        <!--android:background="@drawable/ic_home_white_30dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/setthepath_txtSetThePath"-->
+        <!--app:layout_constraintEnd_toStartOf="@+id/setthepath_txtSetThePath"-->
+        <!--app:layout_constraintHorizontal_bias="0.096"-->
+        <!--app:layout_constraintStart_toEndOf="@+id/setthepath_btnBack"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/setthepath_txtSetThePath"-->
+        <!--app:layout_constraintVertical_bias="0.076"/>-->
+
+        <!--<Button-->
+        <!--android:id="@+id/setthepath_btnBack"-->
+        <!--android:layout_width="35dp"-->
+        <!--android:layout_height="35dp"-->
+        <!--android:layout_marginStart="16dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:background="@drawable/ic_arrow_back_white_30dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="@+id/setthepath_btnHome"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/toolbar"-->
+        <!--app:layout_constraintTop_toTopOf="@+id/setthepath_btnHome"-->
+        <!--app:layout_constraintVertical_bias="1.0"/>-->
+
+    </android.support.v7.widget.Toolbar>
+
+
+</LinearLayout>

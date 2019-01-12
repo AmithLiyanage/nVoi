@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "489394865179",
+    "firebase_url": "https://nvoinew.firebaseio.com",
+    "project_id": "nvoinew",
+    "storage_bucket": "nvoinew.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489394865179:android:65e2eacfa221f8b5",
+        "android_client_info": {
+          "package_name": "com.nvoi.nvoi_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489394865179-e1nrcpidau2u6bf8uct3k09d8j6960du.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nvoi.nvoi_new",
+            "certificate_hash": "4aaa50474425e266de44c3dc04f47f79df48f015"
+          }
+        },
+        {
+          "client_id": "489394865179-ko6s9jc42s6o7uph9b73qnbv86nmcomh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdbUYuayQwskl3SIiFgbPzfGxeWs4oJ1c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489394865179-ko6s9jc42s6o7uph9b73qnbv86nmcomh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

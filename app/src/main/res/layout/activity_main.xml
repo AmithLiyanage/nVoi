@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nvoi.nvoi_new.MainActivity"
+    android:padding="16dp"
+    android:background="@drawable/gradiance_loading_page"
+    >
+
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/loading_page_progressbar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="240dp" />
+
+    <ImageView
+        android:id="@+id/nVoiLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/login_button_"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="29dp"
+        app:srcCompat="@drawable/nvoi_3d_logo" />
+
+    <ImageView
+        android:id="@+id/login_button_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loading_page_progressbar"
+        android:layout_alignStart="@+id/loading_page_progressbar"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/collabrative_delivery" />
+
+    <Button
+        android:id="@+id/btnGoLoginView"
+        style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:text="Next" />
+
+
+</RelativeLayout>
