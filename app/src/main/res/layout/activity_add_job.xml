@@ -111,7 +111,7 @@
                     android:layout_marginStart="0dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:inputType="time"
+                    android:inputType="date"
                     android:singleLine="true"
                     android:textColor="@color/colorBlack" />
 
@@ -135,9 +135,10 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
-                android:hint="discription"
                 android:background="@color/colorWhite"
                 android:gravity="center"
+                android:hint="discription"
+                android:textAlignment="viewStart"
                 android:textColor="@color/colorBlack" />
 
             <!--<android.support.v7.widget.AppCompatSpinner-->
