@@ -36,9 +36,6 @@ public class AddJob extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_job);
 
-        Spinner spinner;
-        String paths[]={"A","B","C"};
-
 
         final Button btnConfirm =  findViewById(R.id.button);
 
@@ -69,28 +66,28 @@ public class AddJob extends AppCompatActivity {
 
         String descriptionT=description.getText().toString();
         String package_Type=packageType.getText().toString();
-        String typeOwner=type.getText().toString();
+//        String typeOwner=type.getText().toString();
         String timeDs=time.getText().toString();
         String dateDs=date.getText().toString();
         float weightPack=Float.parseFloat(weight.getText().toString());
 
-        if(weightPack>50.0 && weightPack>0){
+        if(weightPack>50.0 && weightPack<0.0){
             Toast.makeText(AddJob.this,"The weight must be less than 50kg",Toast.LENGTH_SHORT).show();
         }else if(dateDs.length() != 10){
             Toast.makeText(AddJob.this,"Date is not correct",Toast.LENGTH_SHORT).show();
         }else{
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Job").child("Owner");
-
             String ownerId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Job").child(ownerId);
+
             HashMap<String, Object> hashMap = new HashMap<>();
-            hashMap.put("ownerId",ownerId);
-            hashMap.put("transporter",dummyTransporter);
-            hashMap.put("ownerType",typeOwner);
+//            hashMap.put("ownerId",ownerId);
+            hashMap.put("transporter","None");
+//            hashMap.put("ownerType",typeOwner);
             hashMap.put("startLatitude",start_lat);
             hashMap.put("startLongitude",start_lng);
             hashMap.put("endLatitude",end_lat);
             hashMap.put("endLongitude",end_lng);
-            hashMap.put("otherPerson","");
+            hashMap.put("partnerId","None");
             hashMap.put("time",timeDs);
             hashMap.put("date",dateDs);
             hashMap.put("description",descriptionT);
