@@ -114,7 +114,8 @@ public class TransportActivity extends FragmentActivity implements OnMapReadyCal
     }
 
     private void sendLocation() {
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Job").child("Transporter");
+        String transporterId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Trips").child(transporterId);
 
         Double startLat=trans_start.latitude;
         Double startLng=trans_start.longitude;
@@ -122,9 +123,9 @@ public class TransportActivity extends FragmentActivity implements OnMapReadyCal
         Double endLat=trans_dest.latitude;
         Double endLng=trans_dest.longitude;
 
-        String transporterId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("ownerId",transporterId);
+        hashMap.put("transporterId",transporterId);
         hashMap.put("startLat",startLat);
         hashMap.put("startLng",startLng);
         hashMap.put("endLat",endLat);
