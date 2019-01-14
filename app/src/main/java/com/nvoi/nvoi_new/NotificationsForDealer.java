@@ -24,40 +24,40 @@ public class NotificationsForDealer extends AppCompatActivity {
                 startActivity(new Intent(NotificationsForDealer.this, NavigationDrawerMainView.class).setFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP));
             }
         });
-
-        final Button viewButton1 =  findViewById(R.id.notifications_btnViewProfile_1);     //View Courier Profile Button
-        final Button confirmButton1 =  findViewById(R.id.notifications_btnConfirmCourior_1);     //Confirm Courier Profile Button
-        final Button viewButton2 =  findViewById(R.id.notifications_btnViewProfile_2);     //View Courier Profile Button
-        final Button confirmButton2 =  findViewById(R.id.notifications_btnConfirmCourior_2);     //Confirm Courier Profile Button
-
-
-        viewButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { //to open Transporter profile
-                openCourierProfile();
-            }
-        });
-
-        confirmButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { //to open Notifications
-                confirmCourier();
-            }
-        });
-
-        viewButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { //to open Transporter profile
-                openCourierProfile();
-            }
-        });
-
-        confirmButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { //to open Notifications
-                confirmCourier();
-            }
-        });
+//
+//        final Button viewButton1 =  findViewById(R.id.notifications_btnViewProfile_1);     //View Courier Profile Button
+//        final Button confirmButton1 =  findViewById(R.id.notifications_btnConfirmCourior_1);     //Confirm Courier Profile Button
+//        final Button viewButton2 =  findViewById(R.id.notifications_btnViewProfile_2);     //View Courier Profile Button
+//        final Button confirmButton2 =  findViewById(R.id.notifications_btnConfirmCourior_2);     //Confirm Courier Profile Button
+//
+//
+//        viewButton1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) { //to open Transporter profile
+//                openCourierProfile();
+//            }
+//        });
+//
+//        confirmButton1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) { //to open Notifications
+//                confirmCourier();
+//            }
+//        });
+//
+//        viewButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) { //to open Transporter profile
+//                openCourierProfile();
+//            }
+//        });
+//
+//        confirmButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) { //to open Notifications
+//                confirmCourier();
+//            }
+//        });
 
     }
 
