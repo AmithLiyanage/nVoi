@@ -99,6 +99,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
         final Button dealerButton = findViewById(R.id.mainView_btnDealer);     //Dealer Button
 
         final ImageButton notificationDealerButton = findViewById(R.id.notification_btnDealer);//Notification Button
+        final ImageButton notificationTripButton = findViewById(R.id.btn_trips);//Notification Button
 
         courierButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,6 +121,14 @@ public class NavigationDrawerMainView extends AppCompatActivity
                 openNotifcationForDealer();
             }
         });
+
+        notificationTripButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { //to open Notifications
+                openNotifcationAsTransporter();
+            }
+        });
+
 
         //copy from profile fragment
         image_profile = findViewById(R.id.profile_image);
@@ -328,7 +337,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
     }
 
     public void openNotifcationAsTransporter() {
-        Intent intent = new Intent(this, NotificationsForDealer.class);
+        Intent intent = new Intent(this, NotificationAsTransporter.class);
         startActivity(intent);
     }
 

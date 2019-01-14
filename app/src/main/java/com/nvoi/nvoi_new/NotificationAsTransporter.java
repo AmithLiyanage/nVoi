@@ -15,7 +15,7 @@ public class NotificationAsTransporter extends AppCompatActivity {
 
         Toolbar toolbar = findViewById((R.id.toolbar));
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("NOTIFICATION");
+        getSupportActionBar().setTitle("TRIPS");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
