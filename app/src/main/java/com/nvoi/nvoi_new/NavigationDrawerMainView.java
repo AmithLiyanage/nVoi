@@ -327,6 +327,11 @@ public class NavigationDrawerMainView extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void openNotifcationAsTransporter() {
+        Intent intent = new Intent(this, NotificationsForDealer.class);
+        startActivity(intent);
+    }
+
     public void openChatBox() {
         Intent intent = new Intent(this, ChatBox.class);
         startActivity(intent);

@@ -24,7 +24,7 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/btn_packages"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

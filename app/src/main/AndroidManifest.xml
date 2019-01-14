@@ -78,7 +78,8 @@
             android:label="@string/title_activity_transport" />
         <activity
             android:name=".SendActivity"
-            android:label="@string/title_activity_send"></activity>
+            android:label="@string/title_activity_send" />
+        <activity android:name=".NotificationAsTransporter"></activity>
     </application>
 
 </manifest>

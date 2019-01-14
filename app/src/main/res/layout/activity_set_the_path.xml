@@ -8,16 +8,6 @@
     tools:context=".SetThePath"
     android:background="@color/colorLightGray3">
 
-    <!--<fragment-->
-    <!--android:id="@+id/map"-->
-    <!--class="com.google.android.gms.maps.SupportMapFragment"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_alignParentStart="true"-->
-    <!--android:layout_alignParentLeft="true"-->
-    <!--android:layout_alignParentRight="true"-->
-    <!--android:layout_alignParentTop="true"/>-->
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"

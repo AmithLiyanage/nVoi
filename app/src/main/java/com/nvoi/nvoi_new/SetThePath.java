@@ -30,8 +30,6 @@ public class SetThePath extends AppCompatActivity {
         });
     }
 
-
-
 //    @Override
 //    public void onMapReady(GoogleMap googleMap) {
 //        mMap = googleMap;
