@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -23,7 +24,8 @@ public class AddJob extends AppCompatActivity {
 
 //    private String startLocation="1", endLocation="2";
 
-    private EditText description,weight,type,packageType,time,date;
+    private EditText description,weight,time,date;
+    private Spinner packageType,type;
 
 //    private String time="12/12/2018", date="13.45",;
 
@@ -41,10 +43,23 @@ public class AddJob extends AppCompatActivity {
 
         description=(EditText)findViewById(R.id.description);
         weight=(EditText)findViewById(R.id.weight);
-        packageType=(EditText)findViewById(R.id.pack_type);
-        type=(EditText)findViewById(R.id.ownerType);
         time=(EditText)findViewById(R.id.time);
         date=(EditText)findViewById(R.id.date);
+
+        packageType=(Spinner) findViewById(R.id.pack_type);
+        type=(Spinner) findViewById(R.id.ownerType);
+
+        ArrayAdapter<String> pakType=new ArrayAdapter<String>(AddJob.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.packType));
+        ArrayAdapter<String> ownType=new ArrayAdapter<String>(AddJob.this,
+                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.ownerType));
+
+        pakType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        packageType.setAdapter(pakType);
+        ownType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(ownType);
+
+
 
         btnConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +80,7 @@ public class AddJob extends AppCompatActivity {
         Double end_lng=bundle_getPassData.getDouble("end_lng");
 
         String descriptionT=description.getText().toString();
-        String package_Type=packageType.getText().toString();
+        String package_Type=packageType.getSelectedItem().toString();
 //        String typeOwner=type.getText().toString();
         String timeDs=time.getText().toString();
         String dateDs=date.getText().toString();
