@@ -172,13 +172,14 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_1">
 
-
                     <EditText
-                        android:id="@+id/weight"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:hint="limit=50kg" />
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:hint="limit=50kg" />
+
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -207,11 +208,10 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_1">
 
-                    <EditText
+                    <Spinner
                         android:id="@+id/pack_type"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center" />
+                        android:layout_width="134dp"
+                        android:layout_height="match_parent"></Spinner>
                 </LinearLayout>
 
             </LinearLayout>
@@ -240,10 +240,11 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/rectangle_1">
 
-                    <EditText
+                    <!--width is 134dp-->
+                    <Spinner
                         android:id="@+id/ownerType"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+                        android:layout_width="134dp"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
 
             </LinearLayout>

@@ -14,4 +14,18 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_transport">Map</string>
     <string name="title_activity_send">Map</string>
+
+
+    <string-array name="packType">
+        <item>glass</item>
+        <item>food</item>
+        <item>flamable</item>
+        <item>inflamable</item>
+    </string-array>
+
+    <string-array name="ownerType">
+        <item>Sender</item>
+        <item>Receiver</item>
+
+    </string-array>
 </resources>
