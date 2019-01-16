@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -26,17 +25,17 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:id="@+id/profile_picture"
+                        android:id="@+id/transporter_profile_picture"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginTop="5dp"
                         android:padding="4dp" />
                     <!---->
                     <!--<TextView-->
-                        <!--android:layout_width="90dp"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:textAlignment="center"-->
-                        <!--android:text="click to view profile"/>-->
+                    <!--android:layout_width="90dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:text="click to view profile"/>-->
 
                 </LinearLayout>
 
@@ -46,7 +45,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_username"
+                        android:id="@+id/username"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -57,10 +56,10 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/text_description"
+                        android:id="@+id/description"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/text_username"
+                        android:layout_below="@id/username"
                         android:layout_marginLeft="5dp"
                         android:layout_toRightOf="@id/imageView"
                         android:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
@@ -73,12 +72,12 @@
                         android:layout_marginTop="15dp">
 
                         <TextView
-                            android:id="@+id/text_rating"
+                            android:id="@+id/rating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
-                            android:layout_toRightOf="@id/profile_picture"
+                            android:layout_toRightOf="@id/transporter_profile_picture"
                             android:background="@color/colorDarkBlue"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
@@ -109,5 +108,4 @@
 
     </android.support.v7.widget.CardView>
 
-</LinearLayout>
-
+</RelativeLayout>
