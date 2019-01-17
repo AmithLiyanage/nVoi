@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +29,7 @@ import java.util.List;
 public class NotificationsForDealer extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+
     private TransporterAdapter transporterAdapter;
     private List<Transporter> mTransporters;
 
@@ -49,17 +51,18 @@ public class NotificationsForDealer extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.transporters_recycler_view);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getParent()));//getContext
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mTransporters = new ArrayList<>();
 
+        Toast.makeText(this, "XX", Toast.LENGTH_LONG ).show();
         readTransporters();
+
+        transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
+        recyclerView.setAdapter(transporterAdapter);
 
 //        final Button viewButton1 =  findViewById(R.id.notifications_btnViewProfile_1);     //View Courier Profile Button
 //        final Button confirmButton1 =  findViewById(R.id.notifications_btnConfirmCourior_1);     //Confirm Courier Profile Button
-//        final Button viewButton2 =  findViewById(R.id.notifications_btnViewProfile_2);     //View Courier Profile Button
-//        final Button confirmButton2 =  findViewById(R.id.notifications_btnConfirmCourior_2);     //Confirm Courier Profile Button
-//
 //
 //        viewButton1.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -74,60 +77,30 @@ public class NotificationsForDealer extends AppCompatActivity {
 //                confirmCourier();
 //            }
 //        });
-//
-//        viewButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) { //to open Transporter profile
-//                openCourierProfile();
-//            }
-//        });
-//
-//        confirmButton2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) { //to open Notifications
-//                confirmCourier();
-//            }
-//        });
+
 
     }
 
     private void readTransporters() {
-
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference referenceUsers = FirebaseDatabase.getInstance().getReference("Users");
-        //final DatabaseReference referenceTransporter = FirebaseDatabase.getInstance().getReference("Trips").child("transporterId");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Transporterdetails");
 
-        referenceUsers.addValueEventListener(new ValueEventListener() {
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 mTransporters.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    User user = snapshot.getValue(User.class);
                     Transporter transporter = snapshot.getValue(Transporter.class);
 
-                    //condition
-                    assert user != null;
+                    assert transporter != null;
                     assert firebaseUser != null;
-                    if (user.getId().equals("JgWQj3xdGMZIrxIzsfXKr6MEBES2")){   //referenceTransporter
-
-                        user.getUsername();
-                        user.getImageURL();
-                        user.getRating();
-
-                        HashMap<String, Object> hashMap = new HashMap<>();
-
-                        transporter.setUsername(user.getUsername());
-                        transporter.setDescription("Empty");
-                        transporter.setImageURL(user.getImageURL());
-                        transporter.setRating(user.getRating());
-
+                    if (!transporter.getId().equals(firebaseUser.getUid())) { //choose all users without logged user
                         mTransporters.add(transporter);
                     }
-
                 }
 
-                transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
-                recyclerView.setAdapter(transporterAdapter);
+//                transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
+//                recyclerView.setAdapter(transporterAdapter);
             }
 
             @Override
@@ -146,5 +119,4 @@ public class NotificationsForDealer extends AppCompatActivity {
         Intent intent = new Intent(this, NavigationDrawerMainView.class);
         startActivity(intent);
     }
-
 }

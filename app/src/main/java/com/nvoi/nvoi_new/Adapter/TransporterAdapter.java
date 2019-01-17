@@ -28,14 +28,20 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.transporter_item, parent, false);
-        return new TransporterAdapter.ViewHolder(view);
+        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
+        View view = layoutInflater.inflate(R.layout.transporter_item, null);
+        return new ViewHolder(view);
+//        View view = LayoutInflater.from(mContext).inflate(R.layout.transporter_item, parent, false);
+//        return new TransporterAdapter.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Transporter transporter = mTransporters.get(position);
+
         holder.username.setText(transporter.getUsername());
+        holder.description.setText(transporter.getDescription());
+        holder.rating.setText(String.valueOf(transporter.getRating()));
         if (transporter.getImageURL().equals("default")) {
             holder.transporter_pro_pic.setImageResource(R.mipmap.ic_launcher);
         } else {
@@ -52,7 +58,6 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 
         public TextView username, description, rating;
         public ImageView transporter_pro_pic;
-
 
         public ViewHolder(View itemView) {
             super(itemView);

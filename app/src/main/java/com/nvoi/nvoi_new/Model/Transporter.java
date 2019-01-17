@@ -2,7 +2,7 @@ package com.nvoi.nvoi_new.Model;
 
 public class Transporter {
 
-    //private String id;
+    private String id;
     private String username;
     private  String description;
     private double rating;
@@ -13,21 +13,21 @@ public class Transporter {
 
     }
 
-    public Transporter(String username, String description, double rating, String imageURL) {  //String id,
-        //this.id = id;
+    public Transporter(String id, String username, String description, double rating, String imageURL) {
+        this.id = id;
         this.username = username;
         this.description = description;
         this.rating = rating;
         this.imageURL = imageURL;
     }
 
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
