@@ -26,12 +26,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nvoi.nvoi_new.Fragments.ChatFragment;
-import com.nvoi.nvoi_new.Fragments.ProfileFragment;
 import com.nvoi.nvoi_new.Fragments.UsersFragment;
 import com.nvoi.nvoi_new.Model.Chat;
 import com.nvoi.nvoi_new.Model.User;
 
-import java.nio.channels.Channel;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -52,6 +50,7 @@ public class ChatBox extends AppCompatActivity {
 
         Toolbar toolbar = findViewById((R.id.toolbar));
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +119,6 @@ public class ChatBox extends AppCompatActivity {
                 }
 
                 viewPagerAdapter.addFragment(new UsersFragment(), "Users");
-                //viewPagerAdapter.addFragment(new ProfileFragment(), "Profile");
 
                 viewPager.setAdapter(viewPagerAdapter);
 

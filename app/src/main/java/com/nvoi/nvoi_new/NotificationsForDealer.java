@@ -55,30 +55,35 @@ public class NotificationsForDealer extends AppCompatActivity {
 
         mTransporters = new ArrayList<>();
 
-        Toast.makeText(this, "XX", Toast.LENGTH_LONG ).show();
+        //Toast.makeText(this, "XX", Toast.LENGTH_SHORT ).show();
         readTransporters();
+
+        Toast.makeText(this, "YY", Toast.LENGTH_LONG ).show();
+
+        //adding some items to our list
+//        mTransporters.add(
+//            new Transporter(
+//                "wer",
+//                "Apple",
+//                "13.3 inch, Silver, 1.35 kg",
+//                4.3));////R.mipmap.ic_launcher
+//
+//        mTransporters.add(
+//            new Transporter(
+//                "qwe",
+//                "Dell",
+//                "14 inch, Gray, 1.659 kg",
+//                4.3));//R.mipmap.ic_launcher
+//
+//        mTransporters.add(
+//            new Transporter(
+//                "wer",
+//                "Microsoft",
+//                "13.3 inch, Silver, 1.35 kg",
+//                4.3));//R.mipmap.ic_launcher
 
         transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
         recyclerView.setAdapter(transporterAdapter);
-
-//        final Button viewButton1 =  findViewById(R.id.notifications_btnViewProfile_1);     //View Courier Profile Button
-//        final Button confirmButton1 =  findViewById(R.id.notifications_btnConfirmCourior_1);     //Confirm Courier Profile Button
-//
-//        viewButton1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) { //to open Transporter profile
-//                openCourierProfile();
-//            }
-//        });
-//
-//        confirmButton1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) { //to open Notifications
-//                confirmCourier();
-//            }
-//        });
-
-
     }
 
     private void readTransporters() {
@@ -99,8 +104,8 @@ public class NotificationsForDealer extends AppCompatActivity {
                     }
                 }
 
-//                transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
-//                recyclerView.setAdapter(transporterAdapter);
+                transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
+                recyclerView.setAdapter(transporterAdapter);
             }
 
             @Override
@@ -108,15 +113,5 @@ public class NotificationsForDealer extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void openCourierProfile() {
-        Intent intent = new Intent(this, CouriorProfile.class);
-        startActivity(intent);
-    }
-
-    public void confirmCourier() {
-        Intent intent = new Intent(this, NavigationDrawerMainView.class);
-        startActivity(intent);
     }
 }

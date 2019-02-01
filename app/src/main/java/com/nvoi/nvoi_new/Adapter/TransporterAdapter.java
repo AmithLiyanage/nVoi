@@ -27,12 +27,12 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-        View view = layoutInflater.inflate(R.layout.transporter_item, null);
+    public TransporterAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //View view = LayoutInflater.from(mContext).inflate(R.layout.transporter_item, parent, false);
+        //View view = layoutInflater.inflate(R.layout.transporter_item, null);
+
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transporter_item, parent, false);
         return new ViewHolder(view);
-//        View view = LayoutInflater.from(mContext).inflate(R.layout.transporter_item, parent, false);
-//        return new TransporterAdapter.ViewHolder(view);
     }
 
     @Override
@@ -41,12 +41,12 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 
         holder.username.setText(transporter.getUsername());
         holder.description.setText(transporter.getDescription());
-        holder.rating.setText(String.valueOf(transporter.getRating()));
-        if (transporter.getImageURL().equals("default")) {
-            holder.transporter_pro_pic.setImageResource(R.mipmap.ic_launcher);
-        } else {
-            Glide.with(mContext).load(transporter.getImageURL()).into(holder.transporter_pro_pic);
-        }
+        holder.t_rating.setText(String.valueOf(transporter.getRating()));
+//        if (transporter.getImageURL().equals("default")) {
+//            holder.transporter_pro_pic.setImageResource(R.mipmap.ic_profile_picture_round);
+//        } else {
+//            Glide.with(mContext).load(transporter.getImageURL()).into(holder.transporter_pro_pic);
+//        }
     }
 
     @Override
@@ -56,16 +56,17 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView username, description, rating;
-        public ImageView transporter_pro_pic;
+//        public TextView username;
+        public TextView username, description, t_rating;
+//        public ImageView transporter_pro_pic;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             username = itemView.findViewById(R.id.username);
             description = itemView.findViewById(R.id.description);
-            rating = itemView.findViewById(R.id.rating);
-            transporter_pro_pic = itemView.findViewById(R.id.transporter_profile_picture);
+            t_rating = itemView.findViewById(R.id.txt_rating);
+//            transporter_pro_pic = itemView.findViewById(R.id.transporter_profile_picture);
         }
     }
 

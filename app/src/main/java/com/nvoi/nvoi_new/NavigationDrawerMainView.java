@@ -337,7 +337,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
     }
 
     public void openNotifcationAsTransporter() {
-        Intent intent = new Intent(this, NotificationAsTransporter.class);
+        Intent intent = new Intent(this, RecycleView.class);
         startActivity(intent);
     }
 

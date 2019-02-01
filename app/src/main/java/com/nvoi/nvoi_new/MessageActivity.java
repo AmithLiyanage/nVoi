@@ -43,7 +43,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MessageActivity extends AppCompatActivity {
+public class  MessageActivity extends AppCompatActivity {
 
     CircleImageView profile_image;
     TextView username;
@@ -226,7 +226,7 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Token token = snapshot.getValue(Token.class);
-                    Data data = new Data(fuser.getUid(), R.mipmap.ic_launcher, username+": "+message, "New Message", userid);
+                    Data data = new Data(fuser.getUid(), R.mipmap.ic_launcher_round, username+": "+message, "New Message", userid);
                     Sender sender = new Sender(data,  token.getToken());
 
                     apiService.sendNotification(sender)
@@ -236,6 +236,8 @@ public class MessageActivity extends AppCompatActivity {
                                     if (response.code() == 200) {
                                         if (response.body().success != 1) {
                                             Toast.makeText(MessageActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                                        } else {    //add by me for check
+                                            Toast.makeText(MessageActivity.this, "Successed", Toast.LENGTH_SHORT).show();
                                         }
                                     }
                                 }
