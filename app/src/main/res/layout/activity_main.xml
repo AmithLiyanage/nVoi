@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.nvoi.nvoi_new.MainActivity"
     android:padding="16dp"
-    android:background="@drawable/gradiance_loading_page"
-    >
+    android:background="@drawable/gradiance_loading_page">
 
     <android.support.v4.widget.ContentLoadingProgressBar
         android:id="@+id/loading_page_progressbar"

@@ -10,4 +10,6 @@
     <color name="colorGreen">#009688</color>
     <color name="colorPurple">#830092</color>
     <color name="colorDarkBlue">#000022</color>
+    <color name="colorLightLime">#11858e</color>
+    <color name="colorDarkLime">#086479</color>
 </resources>
