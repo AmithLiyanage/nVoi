@@ -55,32 +55,11 @@ public class NotificationsForDealer extends AppCompatActivity {
 
         mTransporters = new ArrayList<>();
 
-        //Toast.makeText(this, "XX", Toast.LENGTH_SHORT ).show();
-        readTransporters();
-
-        Toast.makeText(this, "YY", Toast.LENGTH_LONG ).show();
-
-        //adding some items to our list
-//        mTransporters.add(
-//            new Transporter(
-//                "wer",
-//                "Apple",
-//                "13.3 inch, Silver, 1.35 kg",
-//                4.3));////R.mipmap.ic_launcher
-//
-//        mTransporters.add(
-//            new Transporter(
-//                "qwe",
-//                "Dell",
-//                "14 inch, Gray, 1.659 kg",
-//                4.3));//R.mipmap.ic_launcher
-//
-//        mTransporters.add(
-//            new Transporter(
-//                "wer",
-//                "Microsoft",
-//                "13.3 inch, Silver, 1.35 kg",
-//                4.3));//R.mipmap.ic_launcher
+        try {
+            readTransporters();
+        } catch (Exception e) {
+            Toast.makeText(this, "error read : "+e, Toast.LENGTH_LONG ).show();
+        }
 
         transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
         recyclerView.setAdapter(transporterAdapter);

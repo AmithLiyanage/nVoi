@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.nvoi.nvoi_new.Model.Transporter;
@@ -28,9 +29,6 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
     @NonNull
     @Override
     public TransporterAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //View view = LayoutInflater.from(mContext).inflate(R.layout.transporter_item, parent, false);
-        //View view = layoutInflater.inflate(R.layout.transporter_item, null);
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transporter_item, parent, false);
         return new ViewHolder(view);
     }
@@ -40,10 +38,14 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
         Transporter transporter = mTransporters.get(position);
 
         holder.username.setText(transporter.getUsername());
-        holder.description.setText(transporter.getDescription());
+//        if ( holder.description.equals("")) {
+            holder.description.setText("No description about deal.........................");
+//        } else {
+//            holder.description.setText(transporter.getDescription());
+//        }
         holder.t_rating.setText(String.valueOf(transporter.getRating()));
-//        if (transporter.getImageURL().equals("default")) {
-//            holder.transporter_pro_pic.setImageResource(R.mipmap.ic_profile_picture_round);
+        //if (transporter.getImageURL().equals("default")) {
+            holder.transporter_pro_pic.setImageResource(R.mipmap.ic_profile_picture_round);
 //        } else {
 //            Glide.with(mContext).load(transporter.getImageURL()).into(holder.transporter_pro_pic);
 //        }
@@ -56,9 +58,8 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-//        public TextView username;
         public TextView username, description, t_rating;
-//        public ImageView transporter_pro_pic;
+        public ImageView transporter_pro_pic;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -66,7 +67,7 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
             username = itemView.findViewById(R.id.username);
             description = itemView.findViewById(R.id.description);
             t_rating = itemView.findViewById(R.id.txt_rating);
-//            transporter_pro_pic = itemView.findViewById(R.id.transporter_profile_picture);
+            transporter_pro_pic = itemView.findViewById(R.id.transporter_profile_picture);
         }
     }
 

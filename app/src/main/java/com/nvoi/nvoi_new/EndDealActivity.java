@@ -25,7 +25,8 @@ public class EndDealActivity extends AppCompatActivity {
 
     DatabaseReference reference;
 
-    private String dummyUser ="JgWQj3xdGMZIrxIzsfXKr6MEBES2";
+    //private String dummyUser ="JgWQj3xdGMZIrxIzsfXKr6MEBES2";
+    private String dummyUser ="jFFOoynIiwgTiP3vL15pZ4gipir1";
 
     private RatingBar ratingBar;
 

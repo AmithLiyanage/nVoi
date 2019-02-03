@@ -6,7 +6,7 @@ public class Transporter {
     private String username;
     private  String description;
     private double rating;
-//    private String imageURL;
+    private String imageURL;
     //private int noOfTransport;
 
 
@@ -14,12 +14,12 @@ public class Transporter {
 
     }
 
-    public Transporter(String id, String username, String description, double rating) {//, String imageURL
+    public Transporter(String id, String username, String description, double rating, String imageURL) {
         this.id = id;
         this.username = username;
         this.description = description;
         this.rating = rating;
-//        this.imageURL = imageURL;
+        this.imageURL = imageURL;
     }
 
     public String getId() {
@@ -54,11 +54,11 @@ public class Transporter {
         this.rating = rating;
     }
 
-//    public String getImageURL() {
-//        return imageURL;
-//    }
-//
-//    public void setImageURL(String imageURL) {
-//        this.imageURL = imageURL;
-//    }
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
 }

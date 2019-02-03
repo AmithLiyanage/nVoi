@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".NotificationsForDealer"
     android:background="@color/colorLightGray3"
     android:orientation="vertical">
@@ -17,119 +17,6 @@
         app:popupTheme="@style/MenuStyle">
 
     </android.support.v7.widget.Toolbar>
-
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/colorGray5"
-        android:layout_margin="5dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <!--<ImageView-->
-                        <!--android:id="@+id/ex_transporter_profile_picture"-->
-                        <!--android:layout_width="90dp"-->
-                        <!--android:layout_height="90dp"-->
-                        <!--android:layout_marginTop="5dp"-->
-                        <!--android:padding="4dp" />-->
-
-                    <!--<de.hdodenhof.circleimageview.CircleImageView-->
-                        <!--android:id="@+id/profile_image"-->
-                        <!--android:layout_width="90dp"-->
-                        <!--android:layout_height="90dp"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="10dp"-->
-                        <!--android:src="@mipmap/ic_profile_picture_round" />-->
-
-                    <!--<TextView-->
-                    <!--android:layout_width="90dp"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:textAlignment="center"-->
-                    <!--android:text="click to view profile"/>-->
-
-                </RelativeLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/ex_username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_toRightOf="@id/imageView"
-                        android:text="Username"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/ex_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/username"
-                        android:layout_marginLeft="5dp"
-                        android:layout_toRightOf="@id/imageView"
-                        android:text="Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra)"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                        android:textColor="#000000" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp">
-
-                        <TextView
-                            android:id="@+id/txt_ex_rating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@color/colorDarkBlue"
-                            android:paddingLeft="15dp"
-                            android:paddingRight="15dp"
-                            android:textSize="18dp"
-                            android:text="2.5"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
-                            android:textStyle="bold" />
-
-                        <!--<Button-->
-                            <!--android:id="@+id/btn_ex_confirm"-->
-                            <!--android:layout_width="111dp"-->
-                            <!--android:layout_height="32dp"-->
-                            <!--android:layout_marginLeft="60dp"-->
-                            <!--android:layout_gravity="right"-->
-                            <!--android:layout_marginBottom="5dp"-->
-                            <!--android:background="@drawable/custom_purple_btn"-->
-                            <!--android:text="Confirm"-->
-                            <!--android:textColor="@color/colorWhite" />-->
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/transporters_recycler_view"

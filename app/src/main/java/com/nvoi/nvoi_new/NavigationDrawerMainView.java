@@ -327,7 +327,6 @@ public class NavigationDrawerMainView extends AppCompatActivity
 
     public void openSendActivity() {
         Intent intent = new Intent(this, SendActivity.class);
-        //Intent intent = new Intent(this, AddJob.class);
         startActivity(intent);
     }
 
@@ -337,7 +336,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
     }
 
     public void openNotifcationAsTransporter() {
-        Intent intent = new Intent(this, RecycleView.class);
+        Intent intent = new Intent(this, NotificationAsTransporter.class);
         startActivity(intent);
     }
 
