@@ -67,7 +67,7 @@ public class NotificationsForDealer extends AppCompatActivity {
 
     private void readTransporters() {
         final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Transporterdetails");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
