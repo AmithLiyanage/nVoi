@@ -83,8 +83,10 @@ public class EndDealActivity extends AppCompatActivity {
             public void onClick(View v) {
                 calculateRating();
 
-                startActivity(new Intent(EndDealActivity.this, NavigationDrawerMainView.class));
-                finish();
+                if (goodOrBad != 0 && newRating != 0) {
+                    startActivity(new Intent(EndDealActivity.this, NavigationDrawerMainView.class));
+                    finish();
+                }
             }
         });
     }
@@ -117,11 +119,13 @@ public class EndDealActivity extends AppCompatActivity {
                 User user = dataSnapshot.getValue(User.class);
                 oldRating = user.getRating();
 
-                Toast.makeText(EndDealActivity.this, "old --> "+oldRating, Toast.LENGTH_LONG).show();
+                //Toast.makeText(EndDealActivity.this, "old --> "+oldRating, Toast.LENGTH_LONG).show();
                 noOfTransport = user.getNoOfTransport();
 
-                if (goodOrBad == 0){
+                if (goodOrBad == 0) {
                     Toast.makeText(EndDealActivity.this, "Please mark rating Good or Bad", Toast.LENGTH_SHORT).show();
+                } else if (newRating == 0) {
+                    Toast.makeText(EndDealActivity.this, "Please Mark the Rating", Toast.LENGTH_LONG).show();
                 } else {
                     value = (oldRating * (noOfTransport +1) + newRating * goodOrBad) / (noOfTransport + 2);// Rating Successful
                     //Toast.makeText(EndDealActivity.this, "oldRating = "+oldRating+"value = "+value+", noOfTransport = "+noOfTransport+", newRating = "+newRating, Toast.LENGTH_LONG).show();
