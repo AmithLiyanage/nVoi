@@ -80,6 +80,7 @@
             android:name=".SendActivity"
             android:label="@string/title_activity_send" />
         <activity android:name=".NotificationAsTransporter" />
+        <activity android:name=".ViewProfile"></activity>
     </application>
 
 </manifest>

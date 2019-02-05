@@ -33,6 +33,8 @@ public class NotificationsForDealer extends AppCompatActivity {
     private TransporterAdapter transporterAdapter;
     private List<Transporter> mTransporters;
 
+    private String commitedTransporterID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,17 @@ public class NotificationsForDealer extends AppCompatActivity {
 
         transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
         recyclerView.setAdapter(transporterAdapter);
+
+        final Button commitButton = findViewById(R.id.btn_confirm);
+
+        commitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                commitedTransporterID = "JgWQj3xdGMZIrxIzsfXKr6MEBES2";
+
+                markCommited();
+            }
+        });
     }
 
     private void readTransporters() {
@@ -85,6 +98,27 @@ public class NotificationsForDealer extends AppCompatActivity {
 
                 transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
                 recyclerView.setAdapter(transporterAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void markCommited(){
+        final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Trips");
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    if (commitedTransporterID == "JgWQj3xdGMZIrxIzsfXKr6MEBES2"){
+
+                    }
+                }
             }
 
             @Override

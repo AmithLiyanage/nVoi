@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,6 +50,7 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
 //        } else {
 //            Glide.with(mContext).load(transporter.getImageURL()).into(holder.transporter_pro_pic);
 //        }
+
     }
 
     @Override
@@ -56,18 +58,27 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
         return mTransporters.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView username, description, t_rating;
         public ImageView transporter_pro_pic;
+        public Button commit;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(this);
 
             username = itemView.findViewById(R.id.username);
             description = itemView.findViewById(R.id.description);
             t_rating = itemView.findViewById(R.id.txt_rating);
             transporter_pro_pic = itemView.findViewById(R.id.transporter_profile_picture);
+            //commit = itemView.findViewById(R.id.btn_commit);
+        }
+
+        @Override
+        public void onClick(View v) {
+            
         }
     }
 
