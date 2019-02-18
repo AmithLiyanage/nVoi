@@ -9,7 +9,6 @@ public class Transporter {
     private String imageURL;
     //private int noOfTransport;
 
-
     public Transporter() {
 
     }

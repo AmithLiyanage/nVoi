@@ -105,7 +105,7 @@ public class TransporterAdapter extends RecyclerView.Adapter<TransporterAdapter.
             intent.putExtra("description", transporter.getDescription());
             intent.putExtra("rating", transporter.getRating());
             intent.putExtra("imageURL", transporter.getImageURL());
-            this.ctx.startActivity(intent);
+            v.getContext().startActivity(intent);
 
 
             //username.setText(transporter.getUsername());

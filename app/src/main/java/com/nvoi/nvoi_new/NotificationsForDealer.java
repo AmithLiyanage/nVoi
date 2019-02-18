@@ -66,16 +66,17 @@ public class NotificationsForDealer extends AppCompatActivity {
         transporterAdapter = new TransporterAdapter(getParent(), mTransporters);
         recyclerView.setAdapter(transporterAdapter);
 
-        final Button commitButton = findViewById(R.id.btn_confirm);
-
-        commitButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                commitedTransporterID = "JgWQj3xdGMZIrxIzsfXKr6MEBES2";
-
-                markCommited();
-            }
-        });
+//        final Button commitButton = findViewById(R.id.btn_confirm);
+//
+//        commitButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                commitedTransporterID = "JgWQj3xdGMZIrxIzsfXKr6MEBES2";
+//
+//                Intent intent = new Intent(NotificationsForDealer.this, ViewProfile.class);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     private void readTransporters() {

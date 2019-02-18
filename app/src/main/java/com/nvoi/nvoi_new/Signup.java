@@ -76,7 +76,7 @@ public class Signup extends AppCompatActivity {
         });
     }
 
-    private void register(final String username, String email, String password){ // String phoneNumber not dded
+    private void register(final String username, final String email, String password){ // String phoneNumber not dded
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -91,6 +91,7 @@ public class Signup extends AppCompatActivity {
                             HashMap<String, Object> hashMap = new HashMap<>();
                             hashMap.put("id", userId);
                             hashMap.put("username", username);
+                            hashMap.put("email", email);
                             hashMap.put("imageURL", "default");
                             hashMap.put("status", "offline");
                             hashMap.put("search", username.toLowerCase());

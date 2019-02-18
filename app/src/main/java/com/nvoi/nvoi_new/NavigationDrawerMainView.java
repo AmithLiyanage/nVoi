@@ -52,7 +52,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     CircleImageView image_profile;
-    TextView username;
+    TextView username, email;
 
     DatabaseReference reference;
     FirebaseUser fuser;
@@ -133,6 +133,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
         //copy from profile fragment
         image_profile = findViewById(R.id.profile_image);
         username = findViewById(R.id.username);
+        email = findViewById(R.id.email);
 
         storageReference = FirebaseStorage.getInstance().getReference("uploads");
 
@@ -144,6 +145,7 @@ public class NavigationDrawerMainView extends AppCompatActivity
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
+                email.setText(user.getEmail());
                 try {
                     if (user.getImageURL().equals("default")){
                         image_profile.setImageResource(R.mipmap.ic_profile_picture_round);

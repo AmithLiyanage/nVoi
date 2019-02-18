@@ -4,15 +4,17 @@ public class User {
 
     private String id;
     private String username;
+    private String email;
     private String imageURL;
     private String status;
     private String search;
     private double rating;
     private int noOfTransport;
 
-    public User(String id, String username, String imageURL, String status, String search, double rating, int noOfTransport) {
+    public User(String id, String username, String email, String imageURL, String status, String search, double rating, int noOfTransport) {
         this.id = id;
         this.username = username;
+        this.email = email;
         this.imageURL = imageURL;
         this.status = status;
         this.search = search;
@@ -78,5 +80,13 @@ public class User {
 
     public void setNoOfTransport(int noOfTransport) {
         this.noOfTransport = noOfTransport;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
